@@ -2,11 +2,11 @@ package com.jakewharton.rxbinding.widget;
 
 import android.view.View;
 
-import com.jakewharton.rxbinding.internal.MainThreadSubscription;
 import com.jakewharton.rxbinding.internal.Preconditions;
 
 import rx.Observable;
 import rx.Subscriber;
+import rx.android.MainThreadSubscription;
 
 /*package*/ class  ScrollListenableScrollChangeEventOnSubscribe<ScrollListenableView extends View & ScrollListenable> implements Observable.OnSubscribe<ScrollListenableScrollChangeEvent> {
     private final ScrollListenableView view;
