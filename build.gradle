@@ -1,21 +1,35 @@
 buildscript {
+  repositories {
+    jcenter()
+  }
   dependencies {
-    classpath rootProject.ext.androidPlugin
+    classpath 'com.android.tools.build:gradle:2.3.3'
+
+    // NOTE: Do not place your application dependencies here; they belong
+    // in the individual module build.gradle files
   }
 }
 
 apply plugin: 'com.android.library'
 
+repositories {
+    jcenter()
+    maven { url "https://jitpack.io" }
+}
+
 dependencies {
-  compile rootProject.ext.rxBinding
+    compile 'io.reactivex:rxjava:1.1.9'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile "com.jakewharton.rxbinding:rxbinding:0.4.0"
+    compile "com.jakewharton.rxbinding:rxbinding-kotlin:0.4.0"
 }
 
 android {
-  compileSdkVersion rootProject.ext.compileSdkVersion
-  buildToolsVersion rootProject.ext.buildToolsVersion
+  compileSdkVersion 25
+  buildToolsVersion "26.0.0"
 
   defaultConfig {
-    minSdkVersion rootProject.ext.minSdkVersion
+    minSdkVersion 19
 
     testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
   }
